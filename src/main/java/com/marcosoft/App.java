@@ -48,7 +48,7 @@ public class App {
         btnRunOperation.setHorizontalAlignment(JButton.CENTER);
         panelRunOperation.add(btnRunOperation);
 
-        JTextArea txtAreaIssueKeyList = new JTextArea("<paste here the issue key list>");
+        JTextArea txtAreaIssueKeyList = new JTextArea("<paste the issue key list here>");
         txtAreaIssueKeyList.setBounds(10,30, 400,400);
 
         // Add an ActionListener to the button
@@ -58,6 +58,12 @@ public class App {
                 // Update the label text when the button is clicked
                 frame.setBackground(Color.BLUE);
                 frame.setTitle("Operation Succeed!");
+
+                String[] issueKeyArray = txtAreaIssueKeyList.getText().split("\n");
+                for(String issueKey:issueKeyArray){
+                    JOptionPane.showMessageDialog(frame,issueKey);
+                }
+
             }
         });
 
